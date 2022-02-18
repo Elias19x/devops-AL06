@@ -3,6 +3,11 @@ package com.esprit.examen.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.NoSuchElementException;
+
 import com.esprit.examen.entities.Contrat;
 import com.esprit.examen.entities.Formateur;
 import com.esprit.examen.entities.Session;
@@ -36,5 +41,13 @@ public class SessionService implements ISessionService{
 			/*todo*/
 		
 	}
+	@Override
+	public Session plusLongSession() {
+		List<Session> list = sessionRepository.findAll();
+		return  list.stream().sorted(Comparator.comparing(Session::getDuree).reversed())
+		.findFirst().get();
 
+
+		
+	}
 }
