@@ -26,12 +26,6 @@ public class SessionRestController {
 		return session;
 	}
 
-	@GetMapping("/plusLongSession")
-	@ResponseBody
-	public Session plusLongSession() {
-		return sessionService.plusLongSession();
-	}
-	
 	@PutMapping("/modifierSession")
 	@ResponseBody
 	public Session modifierSession(@RequestBody Session session) {
@@ -51,4 +45,12 @@ public class SessionRestController {
 	public void supprimerSession(@PathVariable("sessionId") Long sessionId) {
 		sessionService.supprimerSession(sessionId);
 	}
+
+	
+	@GetMapping("/plusLongSession")
+	@ResponseBody
+	public Session plusLongSession() {
+		return sessionService.plusLongSession();
+	}
+	
 }
