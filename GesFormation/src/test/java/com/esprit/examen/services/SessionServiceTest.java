@@ -40,7 +40,6 @@ public class SessionServiceTest {
     @Test
     @TransactionalEventListener    
     public void testAddSession() {
-
         Session session = new Session(null, new Date(20141212), new Date(20201212), 50L, "description");
         Long dataPreTest = sr.count();
         Session savedSession =sr.save(session); 
@@ -54,8 +53,6 @@ public class SessionServiceTest {
 
     @Test
     public void testAffecterFormateurASession() {
-
-
         Session session = new Session(null, new Date(20141212), new Date(20201212), 50L, "description");
         Formateur formateur = new Formateur(null,"ayari","sami",Poste.Ingénieur,Contrat.CDI,"h@gmail.com","psdpsd");
         Session savedSession = sr.save(session);

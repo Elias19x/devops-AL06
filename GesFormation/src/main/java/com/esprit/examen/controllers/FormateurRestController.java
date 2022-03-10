@@ -41,5 +41,13 @@ public class FormateurRestController {
 		formateurService.supprimerFormateur(formateurId);
 	}
 	
+	
+	
+	
+	@GetMapping("/countFormateur")
+	@ResponseBody
+	public Integer countFormateur() {
+		return formateurService.countFormateur();
+	}
 
 }

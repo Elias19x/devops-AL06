@@ -13,4 +13,5 @@ public interface IFormateurService {
 	
 		
 	List<Formateur> listFormateurs();
+	public Integer countFormateur();
 }

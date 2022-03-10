@@ -33,9 +33,6 @@ public class FormateurService implements IFormateurService{
 	}
 
 
-
-
-
 	@Override
 	public List<Formateur> listFormateurs() {
 		
@@ -43,7 +40,11 @@ public class FormateurService implements IFormateurService{
 	}
 
 
-	
+	@Override
+	public Integer countFormateur() {
+	List<Formateur> listFormateur = (List<Formateur>) formateurRepository.findAll() ;
+	return listFormateur.size();
+	}
 	
 
 }
