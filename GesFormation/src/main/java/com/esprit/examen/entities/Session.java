@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +14,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.transaction.annotation.Transactional;
+
 @Entity
+@Transactional
 public class Session implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -27,7 +31,7 @@ public class Session implements Serializable{
 	private String description;
 	@ManyToOne
     Formateur formateur;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	Set<Cours> cours;
 	
 	public Long getId() {

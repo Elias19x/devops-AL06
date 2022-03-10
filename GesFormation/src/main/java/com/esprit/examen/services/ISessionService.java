@@ -9,5 +9,7 @@ public interface ISessionService {
 
 	void supprimerSession(Long sessionId);
 	
+	Session  plusLongSession() ;
+
 	void affecterFormateurASession (Long formateurId, Long sessionId);
 }
