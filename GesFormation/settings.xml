@@ -112,7 +112,7 @@ under the License.
    
     <server>
       <id>deploymentRepo</id>
-      <username>admin1</username>
+      <username>admin</username>
       <password>admin1</password>
     </server>
   
