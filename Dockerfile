@@ -1,5 +1,5 @@
-FROM adoptopenjdk/openjdk11:alpine
-EXPOSE 8083
-ARG JAR_FILE=GesFormation/target/*.jar
-ADD ${JAR_FILE} GesF-1.0.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM maven:3.8.2-jdk-8
+WORKDIR /GesFormation
+COPY . .
+RUN mvn clean install
+CMD mvn spring-boot:run
