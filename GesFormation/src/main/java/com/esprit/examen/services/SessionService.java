@@ -53,4 +53,8 @@ public class SessionService implements ISessionService{
 
 	
 }
+
+	public List<Session> listSession() {
+		return (List<Session>)sessionRepository.findAll();
+	}
 }

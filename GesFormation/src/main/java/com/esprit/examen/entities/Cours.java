@@ -71,6 +71,12 @@ public class Cours implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+	public Cours(String description, TypeCours typeCours, String intitule, Set<Session> sessions) {
+		super();
+		this.description = description;
+		this.typeCours = typeCours;
+		this.intitule = intitule;
+		this.sessions = sessions;
+	}
 	
 }

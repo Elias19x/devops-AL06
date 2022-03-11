@@ -32,7 +32,8 @@ public class Session implements Serializable{
 	@ManyToOne
     Formateur formateur;
 	@ManyToMany(fetch = FetchType.EAGER)
-	Set<Cours> cours;
+	Set<Cours>
+			cours;
 	
 	public Long getId() {
 		return id;
@@ -93,6 +94,13 @@ public class Session implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+	public Session( Date dateDebut, Date dateFin, Long duree, String description, Formateur f) {
+		super();
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.duree = duree;
+		this.description = description;
+		this.formateur=f;
+	}
 	
 }
