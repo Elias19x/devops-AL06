@@ -1,0 +1,30 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first.rules"
+  # - "second.rules"
+
+scrape_configs:
+  - job_name: 'apps'
+    metrics_path: 'SpringMVC/actuator/prometheus'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['localhost:6868']
+        labels:
+          group: 'production'
+  - job_name: 'apps1'
+    metrics_path: 'SpringMVC/actuator/prometheus'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['host.docker.internal:6868']
+        labels:
+          group: 'production'
+  - job_name: 'apps2'
+    metrics_path: 'SpringMVC/actuator/prometheus'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['app:6868']
+        labels:
+          group: 'production'
